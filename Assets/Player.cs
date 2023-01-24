@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static UnityEditor.Experimental.GraphView.GraphView;
-public class Joueur : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public GameObject player1;
     public GameObject player2;
@@ -34,7 +34,7 @@ public class Joueur : MonoBehaviour
         transform.position = newPosition;
 
         /// TODO: Modifier ce test pour que cela fonctionne avec un nombre pair d'animaux
-   
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -56,28 +56,5 @@ public class Joueur : MonoBehaviour
                 }
             }
         }
-        /*else if (collision.gameObject == player3)
-        {
-            Health health = player3.GetComponent<Health>();
-            if (health != null)
-            {
-                Health healthPlayer1 = player1.GetComponent<Health>();
-                if (healthPlayer1 != null)
-                {
-                    if (health.currentHealth < healthPlayer1.currentHealth)
-                    {
-                        Debug.Log("Trigger with player1 with low health");
-                        Destroy(gameObject);
-                        Destroy(collision.gameObject);
-                    }
-                    else
-                    {
-                        Debug.Log("T'as perdu");
-                        Destroy(gameObject);
-                        Destroy(player1);
-                    }
-                }
-            }
-        }*/
     }
 }

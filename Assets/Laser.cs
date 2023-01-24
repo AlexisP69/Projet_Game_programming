@@ -5,9 +5,6 @@ using UnityEngine;
 
 public class Laser : MonoBehaviour
 {
-    public GameObject player1;
-    public GameObject player2;
-    public GameObject player3;
     public float speed = 4f;
 
     void Update()
@@ -23,7 +20,7 @@ public class Laser : MonoBehaviour
          Destroy(gameObject);
          Destroy(collision.gameObject);
      }*/
-    private void OnTriggerEnter2D(Collider2D collision)
+   /* private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject == player2)
         {
@@ -63,7 +60,7 @@ public class Laser : MonoBehaviour
                     }
                 }
             }
-        }
+        }*/
 
         /*private void OnCollisionEnter2D(Collision2D collision)
         {
@@ -87,4 +84,3 @@ public class Laser : MonoBehaviour
             }
         }*/
     }
-}
