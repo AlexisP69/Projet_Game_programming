@@ -1,31 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Ennemi : MonoBehaviour
 {
     public GameObject player1;
-    public GameObject player2;
-    public GameObject player3;
-    public GameObject Laser;
+    //public GameObject player2;
+    //public GameObject player3;
+    //public GameObject Laser;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
             Health ennemiHealth = gameObject.GetComponent<Health>();
             if (ennemiHealth != null)
             {
                 Health healthPlayer1 = player1.GetComponent<Health>();
-                if (healthPlayer1 != null)
+            if (healthPlayer1 != null)
+            {
+                if (ennemiHealth.currentHealth < healthPlayer1.currentHealth)
                 {
-                    if (ennemiHealth.currentHealth < healthPlayer1.currentHealth)
-                    {
-                        Debug.Log("Trigger with player1 with low health");
+                    Debug.Log("Trigger with player1 with hight health");
                     healthPlayer1.ApplyHeal(ennemiHealth.currentHealth);
                     Debug.Log(healthPlayer1.currentHealth);
-                        Destroy(gameObject);
-                        Destroy(collision.gameObject);
-                    }
+                    Destroy(gameObject);
+                    Destroy(collision.gameObject);
+                    GameManager.instance.DecrementAnimalCount();
                 }
+                else if (ennemiHealth.currentHealth > healthPlayer1.currentHealth)
+                {
+                    Debug.Log("Trigger with player1 with low health");
+                    Debug.Log(healthPlayer1.currentHealth);
+                    Destroy(player1);
+                    Destroy(collision.gameObject);
+                    SceneManager.LoadScene("Menu");
+                }
+            }
             }
         }
 }
