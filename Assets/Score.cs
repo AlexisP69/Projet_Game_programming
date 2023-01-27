@@ -4,16 +4,10 @@ using UnityEngine;
 public class Score : MonoBehaviour
 {
     public GameObject scoreText;
-    private TextMeshProUGUI textComponent;
 
-    private void Awake()
+    /// TODO: Appeler cette m�thode lorsque le compteur d'animaux est modifi�
+    public void UpdateScore(int Level)
     {
-        // A
-        textComponent = scoreText.GetComponent<TextMeshProUGUI>();
-    }
-
-    public void UpdateScore(int animalsCount)
-    {
-        textComponent.text = $"Animals: {animalsCount}";
+        scoreText.GetComponent<TextMeshProUGUI>().text = $"NIV.{Level}";
     }
 }
