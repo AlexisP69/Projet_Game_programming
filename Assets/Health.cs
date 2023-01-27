@@ -21,7 +21,7 @@ public class Health : MonoBehaviour
 
     public void ApplyHeal(int amount)
     {
-        maxHealth = 100;
+        maxHealth = 1000;
         currentHealth += amount;
         currentHealth = Mathf.Min(currentHealth, maxHealth);
     }
