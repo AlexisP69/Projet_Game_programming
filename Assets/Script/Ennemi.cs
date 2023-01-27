@@ -7,7 +7,7 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Ennemi : MonoBehaviour
 {
-    public GameObject player1;
+    public GameObject Joueur;
     public Score score;
 
     public void Update()
@@ -21,20 +21,19 @@ public class Ennemi : MonoBehaviour
             Health ennemiHealth = gameObject.GetComponent<Health>();
             if (ennemiHealth != null)
             {
-                Health healthPlayer1 = player1.GetComponent<Health>();
-            if (healthPlayer1 != null)
-            {
-                if (ennemiHealth.currentHealth < healthPlayer1.currentHealth)
+                Health healthPlayer1 = Joueur.GetComponent<Health>();
+                if (healthPlayer1 != null)
                 {
-                    Debug.Log("Trigger with player1 with hight health");
+                    if (ennemiHealth.currentHealth < healthPlayer1.currentHealth)
+                    {
                     healthPlayer1.ApplyHeal(ennemiHealth.currentHealth);
                     Debug.Log(healthPlayer1.currentHealth);
-                        Destroy(gameObject);
-                        Destroy(collision.gameObject);
-                    }else if (ennemiHealth.currentHealth > healthPlayer1.currentHealth) {
-                    Destroy(player1);
+                    Destroy(gameObject);
                     Destroy(collision.gameObject);
-                    SceneManager.LoadScene("Menu");
+                    }else if (ennemiHealth.currentHealth > healthPlayer1.currentHealth) {
+                    Destroy(Joueur);
+                    Destroy(collision.gameObject);
+                    SceneManager.LoadScene("GameOver");
                 }
                 }
             }

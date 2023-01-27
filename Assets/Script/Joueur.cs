@@ -7,8 +7,6 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 public class Joueur : MonoBehaviour
 {
     public GameObject player1;
-    public GameObject player2;
-    public GameObject player3;
     public Score score;
     public float moveStep = 0;
     public GameObject lazer;

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3681245740138888814}
   - component: {fileID: 2785021722556983152}
   - component: {fileID: 5768833048553287890}
-  - component: {fileID: 4152131057219348274}
   m_Layer: 0
   m_Name: drone-1
   m_TagString: Untagged
@@ -107,19 +106,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &4152131057219348274
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3968196253199904948}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.27499998
